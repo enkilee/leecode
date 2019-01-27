@@ -1,0 +1,45 @@
+class Solution {
+public:
+    int myAtoi(string str) {
+        const int maxint=0x7fffffff;
+        const int minint=0x80000000;
+        const long long max=0x100000000;
+        long long ans=0;
+        bool flag=false;
+        int position=0;
+        while(position<str.length()&& str[position]==' ')
+        {
+            position++;
+        }
+        if(position<str.length()&&str[position]=='+')
+        {
+            position++;
+        }
+        else
+        {
+            if(position<str.length() && str[position]=='-')
+            {
+                flag=true;
+                position++;
+            }
+        }
+        for(int i=position;i<str.length();i++)
+        {
+            if(str[i]<='9'&&str[i]>='0')
+            {
+                //ascii Âë×ª»»£¬1Îª49£¬0Îª48
+                ans=ans*10+str[i]-'0';
+                if(ans>maxint) ans=max;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if(flag) ans=-ans;
+        if(ans>maxint) ans=maxint;
+        if(ans<minint) ans=minint;
+        
+        return ans;
+    }
+};
