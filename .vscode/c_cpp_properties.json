@@ -14,7 +14,7 @@
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64",
-            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+            "compileCommands": "E:/Data Structures & algorithms Using C++/leecode/leecode/build/compile_commands.json"
         }
     ],
     "version": 4
